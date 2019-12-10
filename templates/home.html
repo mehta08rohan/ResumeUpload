@@ -93,9 +93,9 @@
 <!-- Third Container (Grid) -->
 <div class="container-fluid bg-3 text-center">
   <h3 class="margin">Where To Find Me?</h3><br>
- <form method="POST" >
+ <form method="POST" action="{{url_for('upload_file')}}" >
     <div class="col-sm-12">
-      <center><input type="file" name ="uploadedtxt"></center>
+      <center><input type="file" name ="uploadedtxt" ></center>
     </div>
 
    <center> <input type="submit"></center>
