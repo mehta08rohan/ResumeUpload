@@ -2,7 +2,7 @@ from flask import Flask, render_template, send_file ,request, flash
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
-
+app.config['UPLOAD_FOLDER'] = 'C:\\Users\\rohan.mehta\\PycharmProjects\\ResumeUpload\\static\\txt\\'
 
 
 @app.route('/')
@@ -11,19 +11,13 @@ def home():
 
 @app.route('/download')
 def download_file():
-    path = '\data.txt'
+    path = 'C:\\Users\\rohan.mehta\\PycharmProjects\\ResumeUpload\\data.txt'
     return send_file(path,as_attachment=True)
-
-#https://stackoverflow.com/questions/39801728/using-flask-to-load-a-txt-file-through-the-browser-and-access-its-data-for-proce
 
 @app.route('/upload')
 def upload_file():
-    if request.method == 'POST':
-        return "PoSTed"
-        # f = request.files['uploadedtxt']
-        # f.save(secure_filename(f.filename))
-        # return 'file uploaded successfully'
+    return render_template('upload.html')
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     app.run(debug=True)
