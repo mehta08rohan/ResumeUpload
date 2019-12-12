@@ -1,6 +1,5 @@
 First Name :
-Second Name :
+Last Name :
+email :
 Age :
-Years of Experince :
-Exp. Salary :
-Current Salary :
+Years of Experience :
