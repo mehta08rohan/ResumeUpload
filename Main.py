@@ -32,13 +32,11 @@ def upload_file():
             lines = my_file.readlines()
             my_list =[]
             for i in lines:
+                i= i.strip().rsplit(':')[1]
                 my_list.append(i)
-            return str(my_list)
-
-        return render_template('my_form.html')
+        return render_template('my_form.html', my_list=my_list)
     return render_template('upload.html')
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-    #rohan is smart
